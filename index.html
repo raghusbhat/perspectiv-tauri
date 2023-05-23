@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perspectiv Labs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="app" class="max-w-[1400px] mx-auto">
+        
+        <div class="m-5 flex justify-between items-center">
+
+            <label class="btn btn-info btn-circle swap swap-rotate">  
+                <!-- this hidden checkbox controls the state -->
+                <input type="checkbox" />
+                
+                <!-- hamburger icon -->
+                <svg class="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 512 512"><path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"/></svg>
+                
+                <!-- close icon -->
+                <svg class="swap-on fill-current" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 512 512"><polygon points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49"/></svg>
+                
+            </label>
+            <button class="btn btn-sm btn-info font-bold" onClick="window.location.reload()">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.99992 16.6663C8.13881 16.6663 6.56242 16.0205 5.27075 14.7288C3.97909 13.4372 3.33325 11.8608 3.33325 9.99967C3.33325 8.13856 3.97909 6.56217 5.27075 5.27051C6.56242 3.97884 8.13881 3.33301 9.99992 3.33301C10.9583 3.33301 11.8749 3.53106 12.7499 3.92717C13.6249 4.32273 14.3749 4.88856 14.9999 5.62467V3.33301H16.6666V9.16634H10.8333V7.49967H14.3333C13.8888 6.7219 13.2813 6.11079 12.5108 5.66634C11.7396 5.2219 10.9027 4.99967 9.99992 4.99967C8.61103 4.99967 7.43047 5.48579 6.45825 6.45801C5.48603 7.43023 4.99992 8.61079 4.99992 9.99967C4.99992 11.3886 5.48603 12.5691 6.45825 13.5413C7.43047 14.5136 8.61103 14.9997 9.99992 14.9997C11.0694 14.9997 12.0346 14.6941 12.8958 14.083C13.7569 13.4719 14.361 12.6663 14.7083 11.6663H16.4583C16.0694 13.1386 15.2777 14.34 14.0833 15.2705C12.8888 16.2011 11.5277 16.6663 9.99992 16.6663Z" fill="currentColor"/>
+                    </svg>
+                    refresh
+            </button>
+
+            <div class="form-control">
+                <label class="label cursor-pointer">
+                  <span class="label-text px-2">Checkbox </span> 
+                  <input type="checkbox" checked="checked" class="checkbox checkbox-info" />
+                </label>
+             </div>
+
+            <div class="flex items-center gap-1">
+                <span class="label-text px-2">Radio </span> 
+                <input type="radio" name="radio-3" class="radio radio-info" checked />
+                <input type="radio" name="radio-3" class="radio radio-info" />
+            </div>
+
+            <div class="flex items-center gap-1">
+                <span class="label-text px-2">On</span>
+                <input type="checkbox" class="toggle " checked /> 
+                <span class="label-text px-2">Off</span>
+            </div>
+            
+            </div>
+
+            
+        </div>
+        <h1 class="text-center text-lg my-1">Sliders</h1>        
+        <div class="grid grid-flow-row sm:grid-flow-col sm:grid-cols-2 place-content-around gap-2">
+            <div class="w-screen sm:w-auto p-5">
+                <input type="range" min="0" max="100" value="25" class="range range-info range-xs" step="25" />
+                <div class="w-full flex justify-between text-xs px-2">
+                    <span>0</span>
+                    <span>25</span>
+                    <span>50</span>
+                    <span>75</span>
+                    <span>100</span>
+                </div>
+            </div>
+            <div class="w-screen sm:w-auto p-5">
+                <div class="flex items-center gap-1">
+                    <p class="text-xs">0</p>
+                    <input type="range" min="0" max="100" value="40" class="range range-info range-xs" />
+                    <p class="text-xs">100</p>
+                </div>                    
+            </div>    
+        </div>
+
+        <!-- Guages -->
+        <h1 class="text-center text-lg my-10">Guages</h1>
+        <div class="grid grid-flow-row sm:grid-flow-col sm:grid-cols-2 xl:grid-cols-3 place-content-around gap-2 m-2">
+            <div  id="gauge" class="bg-[#101010] rounded shadow-lg p-2"></div>
+            <div id="gauge2" class="bg-[#101010] rounded shadow-lg p-2"></div>
+            <div id="gauge3" class="bg-[#101010] rounded shadow-lg p-2"></div>
+        </div>
+
+        <!-- Charts -->
+        <div class="grid grid-flow-row sm:grid-flow-col sm:grid-cols-2 place-content-around gap-2 m-2">
+            <div class="bg-[#101010] rounded shadow-lg p-2">
+                <canvas id="barChart"></canvas>
+            </div>
+            <div class="bg-[#101010] rounded shadow-lg p-2">
+                <canvas id="doughnutChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+    <script type="module" src="/charts.js"></script>
+  </body>
+</html>
